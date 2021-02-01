@@ -26,14 +26,14 @@
 
 namespace ORB_SLAM3
 {
-
+// fscd
 FrameDrawer::FrameDrawer(Atlas* pAtlas):both(false),mpAtlas(pAtlas)
 {
     mState=Tracking::SYSTEM_NOT_READY;
     mIm = cv::Mat(480,640,CV_8UC3, cv::Scalar(0,0,0));
     mImRight = cv::Mat(480,640,CV_8UC3, cv::Scalar(0,0,0));
 }
-
+// fscu
 cv::Mat FrameDrawer::DrawFrame(bool bOldFeatures)
 {
     // std::cout << "0" << std::endl;

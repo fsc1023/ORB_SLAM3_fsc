@@ -29,13 +29,13 @@ namespace ORB_SLAM3
 Atlas::Atlas(){
     mpCurrentMap = static_cast<Map*>(NULL);
 }
-
+// fscd
 Atlas::Atlas(int initKFid): mnLastInitKFidMap(initKFid), mHasViewer(false)
 {
     mpCurrentMap = static_cast<Map*>(NULL);
     CreateNewMap();
 }
-
+// fscu
 Atlas::~Atlas()
 {
     for(std::set<Map*>::iterator it = mspMaps.begin(), end = mspMaps.end(); it != end;)
@@ -54,7 +54,8 @@ Atlas::~Atlas()
 
     }
 }
-
+// fscd
+// 当前有地图，保存; 创新新地图，设为当前地图，在地图集中插入该地图
 void Atlas::CreateNewMap()
 {
     unique_lock<mutex> lock(mMutexAtlas);
@@ -76,7 +77,7 @@ void Atlas::CreateNewMap()
     mpCurrentMap->SetCurrentMap();
     mspMaps.insert(mpCurrentMap);
 }
-
+// fscu
 void Atlas::ChangeMap(Map* pMap)
 {
     unique_lock<mutex> lock(mMutexAtlas);
@@ -165,7 +166,7 @@ std::vector<MapPoint*> Atlas::GetReferenceMapPoints()
     unique_lock<mutex> lock(mMutexAtlas);
     return mpCurrentMap->GetReferenceMapPoints();
 }
-
+// 按mapid从小到大排序所有地图，并返回
 vector<Map*> Atlas::GetAllMaps()
 {
     unique_lock<mutex> lock(mMutexAtlas);
@@ -186,13 +187,13 @@ int Atlas::CountMaps()
     unique_lock<mutex> lock(mMutexAtlas);
     return mspMaps.size();
 }
-
+// 清除当前地图的关键点和关键帧，指向NULL
 void Atlas::clearMap()
 {
     unique_lock<mutex> lock(mMutexAtlas);
     mpCurrentMap->clear();
 }
-
+// 清除maps内容，当前地图指向空地图，上次初始化关键帧id地图为0
 void Atlas::clearAtlas()
 {
     unique_lock<mutex> lock(mMutexAtlas);

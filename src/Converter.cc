@@ -20,7 +20,7 @@
 
 namespace ORB_SLAM3
 {
-
+// fscd 描述子矩阵依次将每行推入描述子集
 std::vector<cv::Mat> Converter::toDescriptorVector(const cv::Mat &Descriptors)
 {
     std::vector<cv::Mat> vDesc;
@@ -30,7 +30,7 @@ std::vector<cv::Mat> Converter::toDescriptorVector(const cv::Mat &Descriptors)
 
     return vDesc;
 }
-
+// fscu
 g2o::SE3Quat Converter::toSE3Quat(const cv::Mat &cvT)
 {
     Eigen::Matrix<double,3,3> R;

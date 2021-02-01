@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/evaluation/**",
+                "${workspaceFolder}/Examples/**",
+                "${workspaceFolder}/Thirdparty/DBoW2/DBoW2/**",
+                "${workspaceFolder}/Thirdparty/g2o/g2o/**",
+                "/usr/include/**",
+                "/home/fengsc/vcpkg/installed/x64-linux/include/**",
+                "${vcpkgRoot}/x64-linux/include",
+                "/opt/ros/kinetic/include/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++98",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
